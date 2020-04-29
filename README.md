@@ -1,2 +1,2 @@
 # php-kodaksmarthome
-php based access to the Kdak Smarthome API
+php based access to the Kodak Smarthome API

@@ -1,0 +1,22 @@
+{
+  "name": "openwebx/php-kodaksmarthome",
+  "description": "php based access to kodak smarthome",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Jens Reinemuth",
+      "email": "jens@reinemuth.rocks"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "phpKodakSmarthome\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.4.0",
+    "nategood/httpful": "^0.3.2"
+  }
+}
