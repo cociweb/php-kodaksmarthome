@@ -59,10 +59,7 @@ class phpKodakSmarthome {
      * @var array|string[]
      */
     private array $regionUrl;
-    /**
-     * @var bool
-     */
-    private bool $isConnected = false;
+
 
     /**
      * phpKodakSmarthome constructor.
@@ -148,10 +145,10 @@ class phpKodakSmarthome {
     }
 
     /**
-     * @return bool
+     * @return array|null
      * @throws ConnectionErrorException
      */
-    public function getDevices() : bool {
+    public function getDevices() : ?array {
 
         if (!$this->userId) {
             $this->authenticate();
@@ -166,17 +163,15 @@ class phpKodakSmarthome {
 
         if ($return->code === 200) {
             $this->devices = $return->body->data;
-            return true;
         }
-        return false;
+        return $this->devices;
     }
 
     /**
-     * @return bool
+     * @return array|null
      * @throws ConnectionErrorException
-     * @throws \Exception
      */
-    public function getEvents() : bool {
+    public function getEvents() : ?array {
 
         if (!$this->devices) {
             $this->getDevices();
@@ -231,7 +226,7 @@ class phpKodakSmarthome {
                 $pages++;
             }
         }
-        return true;
+        return $this->events;
 
     }
 
