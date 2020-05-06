@@ -1,10 +1,12 @@
 <?php
 namespace phpKodakSmarthome;
 
+use DateTime;
 use Httpful\Exception\ConnectionErrorException;
 use Httpful\Request;
 use InvalidArgumentException;
 use phpKodakSmarthome\phpKodakSmarthome_Constants as CONSTANTS;
+use stdClass;
 
 /**
  * Class phpKodakSmarthome
@@ -38,13 +40,13 @@ class phpKodakSmarthome {
      */
     private array $tokenInfo = [];
     /**
-     * @var \stdClass
+     * @var stdClass
      */
-    private \stdClass $accountInfo;
+    private stdClass $accountInfo;
     /**
-     * @var \stdClass
+     * @var stdClass
      */
-    private \stdClass $webUrls;
+    private stdClass $webUrls;
     /**
      * @var array
      */
@@ -172,6 +174,7 @@ class phpKodakSmarthome {
     /**
      * @return bool
      * @throws ConnectionErrorException
+     * @throws \Exception
      */
     public function getEvents() : bool {
 
@@ -206,7 +209,7 @@ class phpKodakSmarthome {
 
                     foreach ($data->events as $event) {
                         if (!isset($this->events[$event->id])) {
-                            $date = new \DateTime($event->created_date);
+                            $date = new DateTime($event->created_date);
                             $preview = null;
                             $video = null;
                             if ($event->event_type === CONSTANTS::DEVICE_EVENT_MOTION) {
