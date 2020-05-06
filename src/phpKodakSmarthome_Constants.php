@@ -7,6 +7,12 @@ class phpKodakSmarthome_Constants {
     public const DEVICE_EVENT_SOUND = 2;
     public const DEVICE_EVENT_BATTERY = 7;
 
+    public const EVENT_DESCRIPTION = [
+        1 => 'Motion detected',
+        2 => 'Sound detected',
+        7 => 'Battery critical'
+    ];
+
     # REGION_URLS
     public const SUPPORTED_REGIONS = [
         'EU' => [
@@ -15,6 +21,7 @@ class phpKodakSmarthome_Constants {
             'URL_AUTH' => 'https://app-eu.kodaksmarthome.com/web/authenticate',
             'URL_DEVICES' => 'https://app-eu.kodaksmarthome.com/web/user/device',
             'URL_LOGOUT' => 'https://app-eu.kodaksmarthome.com/web/#/user/logout',
+            'URL_EVENTS' => 'https://app-eu.kodaksmarthome.com/web/user/device/event',
         ]
     ];
 
