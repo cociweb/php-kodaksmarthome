@@ -16,6 +16,7 @@
   },
   "require": {
     "php": ">=7.4.0",
+    "nategood/httpful": "^0.3.2",
     "ext-json": "*"
   },
   "require-dev": {
