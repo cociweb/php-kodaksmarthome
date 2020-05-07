@@ -136,9 +136,9 @@ class phpKodakSmarthome {
         if ($return->code === 200) {
             $this->userId = $return->body->data->id;
             $headers = $return->headers->toArray();
-            $cookieHeader = ($headers['Set-Cookie'] ?: $headers['set-cookie']);
+            $cookieHeader = ($headers['Set-Cookie'] ?? $headers['set-cookie'] ?? []);
             $cookie = explode(';', $cookieHeader);
-            $this->cookie = str_replace('JSESSIONID=', '', $cookie[0]);
+            $this->cookie = ($cookie[0] ? str_replace('JSESSIONID=', '', $cookie[0]) : null);
             return true;
         }
 
