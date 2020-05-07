@@ -229,5 +229,4 @@ class phpKodakSmarthome {
         return $this->events;
 
     }
-
 }

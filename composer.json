@@ -1,8 +1,7 @@
 {
-  "name": "openwebx/php-kodaksmarthome",
+  "name": "openWebX/php-kodaksmarthome",
   "description": "php based access to kodak smarthome",
-  "minimum-stability": "dev",
-  "prefer-stable": true,
+  "keywords": ["php", "kodak", "smarthome", "babycam"],
   "license": "GPL-3.0-or-later",
   "authors": [
     {
@@ -17,7 +16,8 @@
   },
   "require": {
     "php": ">=7.4.0",
-    "nategood/httpful": "^0.3.2",
     "ext-json": "*"
+  },
+  "require-dev": {
   }
 }
