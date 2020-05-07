@@ -1,5 +1,5 @@
 {
-  "name": "openWebX/php-kodaksmarthome",
+  "name": "openwebx/php-kodaksmarthome",
   "description": "php based access to kodak smarthome",
   "keywords": ["php", "kodak", "smarthome", "babycam"],
   "license": "GPL-3.0-or-later",
