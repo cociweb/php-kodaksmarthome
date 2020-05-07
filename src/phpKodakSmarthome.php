@@ -169,10 +169,11 @@ class phpKodakSmarthome {
     }
 
     /**
+     * @param bool $pardedOnly
      * @return array|null
      * @throws ConnectionErrorException
      */
-    public function getEvents() : ?array {
+    public function getEvents(bool $parsedOnly = false) : ?array {
 
         if (!$this->devices) {
             $this->getDevices();
@@ -216,9 +217,11 @@ class phpKodakSmarthome {
                                 'timestamp' => $date->format('Y-m-d H:i:s'),
                                 'type' => CONSTANTS::EVENT_DESCRIPTION[$event->event_type],
                                 'preview' => $preview,
-                                'video' => $video,
-                                'original' => json_encode($event),
+                                'video' => $video
                             ];
+                            if (!$parsedOnly) {
+                                $this->events[$event->id]['original'] = json_encode($event);
+                            }
                         }
                     }
 
